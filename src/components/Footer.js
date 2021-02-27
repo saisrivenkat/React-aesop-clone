@@ -1,5 +1,13 @@
 import React from 'react'
 import '../Footer.css'
+import Foo from '../footer.json'
+
+const order = Foo.footer.order.map(i => (
+    <li style={{ listStyle: 'none', color: 'white', margin: '0', paddingTop: '10px' }}>{i}</li>
+))
+const service = Foo.footer.service.map(i => (
+    <li style={{ listStyle: 'none', color: 'white', margin: '0', paddingTop: '10px' }}>{i}</li>
+))
 
 function Footer() {
     return (
@@ -15,23 +23,15 @@ function Footer() {
                     <p className="" style={{ color: 'white', fontSize: '15px', marginTop: "45px" }}>Order and Support</p>
                     <div style={{ border: '1px solid white', width: '250px' }}></div>
                     <ul style={{ paddingLeft: '0' }}>
-                        <li style={{ listStyle: 'none', color: 'white', margin: '0', paddingTop: '10px' }}>Contact us </li>
-                        <li style={{ listStyle: 'none', color: 'white', paddingTop: '10px' }} >FAQ </li>
-                        <li style={{ listStyle: 'none', color: 'white', paddingTop: '10px' }} >Delivery and returns </li>
-                        <li style={{ listStyle: 'none', color: 'white', paddingTop: '10px' }} >Terms and conditions</li>
+                        {order}
                     </ul>
-
                 </div>
                 <div className="col-lg-2">
                     <p className="" style={{ color: 'white', fontSize: '15px', marginTop: "45px" }}>Sevices</p>
                     <div style={{ border: '1px solid white', width: '150px' }}></div>
                     <ul style={{ paddingLeft: '0' }}>
-                        <li style={{ listStyle: 'none', color: 'white', margin: '0', paddingTop: '10px' }}>Live assistance</li>
-                        <li style={{ listStyle: 'none', color: 'white', paddingTop: '10px' }} >Corporate gifts </li>
-
-                        <li style={{ listStyle: 'none', color: 'white', paddingTop: '10px' }} >Facial Appointments</li>
+                        {service}
                     </ul>
-
                 </div>
                 <div className="col-lg-3">
                     <p className="" style={{ color: 'white', fontSize: '15px', marginTop: "45px" }}>Location Prefernece</p>
